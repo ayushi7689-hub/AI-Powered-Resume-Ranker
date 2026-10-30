@@ -1,0 +1,103 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    color: #243b80;
+    margin: 35px 0 10px;
+    font-size: 34px;
+}
+
+p {
+    text-align: center;
+    color: #64748b;
+    margin: 15px;
+}
+
+form {
+    background: white;
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 15px;
+}
+
+input[type="file"] {
+    margin: 15px 0;
+    width: 100%;
+}
+
+button {
+    background: #3454c5;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #243b80;
+}
+
+h2 {
+    text-align: center;
+    margin: 35px 0 20px;
+    color: #243b80;
+}
+
+table {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    background: #243b80;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}

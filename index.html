@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Ranker</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+     <h1>AI-Powered Resume Ranker</h1>
+    <p>Compare resumes with your job description.</p>
+
+    <form method="post" enctype="multipart/form-data">
+        <label>Job Discription</label><br>
+        <textarea
+            name="job_description"
+            rows="7"
+            cols="60"
+            placeholder="Enter the required skills and job details..."
+            required
+        ></textarea>
+
+        <br><br>
+
+        <label>Upload PDF Resumes</label><br>
+        <input
+            type="file"
+            name="resumes"
+            accept=".pdf"
+            multiple
+            required
+        >
+
+        <br><br>
+        <button type="submit">Rank Resumes</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if results %}
+        <h2>Candidate Rankings</h2>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Rank</th>
+                <th>Resume</th>
+                <th>Similarity Score</th>
+            </tr>
+
+            {% for candidate in results %}
+            <tr>
+                <td>{{ candidate.rank }}</td>
+                <td>{{ candidate.filename }}</td>
+                <td>{{ candidate.score }}%</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form method="POST" action="/download">
+            <input
+                type="hidden"
+                name="results"
+                value="{{ results | tojson | forceescape }}"
+            >
+            <button type="submit">Download HR Report (CSV)</button>
+    </form>
+    {% endif %}
+</body>
+</html>
