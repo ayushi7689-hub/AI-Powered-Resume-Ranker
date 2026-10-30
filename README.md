@@ -25,8 +25,6 @@ An AI-powered resume screening application that analyzes PDF resumes and ranks c
 - Pandas
 - HTML and CSS
 
-
-
 1. Open `http://127.0.0.1:5000/` in your browser.
 
 ## How It Works
